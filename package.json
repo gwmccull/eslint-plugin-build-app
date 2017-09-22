@@ -1,26 +1,49 @@
 {
   "name": "eslint-plugin-build-app",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Eslint plugin for the Build.com React Native app",
+  "main": "lib/index.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.6.0",
+    "jsx-ast-utils": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^21.0.2",
+    "jest": "^21.1.0",
+    "jest-cli": "^21.1.0"
+  },
+  "scripts": {
+    "test": "./node_modules/jest-cli/bin/jest.js --no-cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gwmccull/eslint-plugin-build-app.git"
+  },
   "keywords": [
     "eslint",
+    "plugin",
+    "jsx",
+    "props",
     "eslintplugin",
     "eslint-plugin"
   ],
   "author": "Garrett McCullough",
-  "main": "lib/index.js",
-  "scripts": {
-    "test": "mocha tests --recursive"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gwmccull/eslint-plugin-build-app/issues"
   },
-  "dependencies": {
-    "requireindex": "~1.1.0"
-  },
-  "devDependencies": {
-    "eslint": "~3.9.1",
-    "mocha": "^3.1.2"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "license": "ISC"
+  "homepage": "https://github.com/gwmccull/eslint-plugin-build-app#readme",
+  "jest": {
+    "roots": [
+      "<rootDir>/tests"
+    ],
+    "testMatch": [
+      "**/*.js"
+    ]
+  }
 }

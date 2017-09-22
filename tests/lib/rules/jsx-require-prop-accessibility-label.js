@@ -4,31 +4,44 @@
  */
 'use strict';
 
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-
-const rule = require('../../../lib/rules/jsx-require-prop-accessibility-label'),
+const rule = require('../../../lib/rules/jsx-require-prop-accessibility-label');
 const RuleTester = require('eslint').RuleTester;
 
-
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
+RuleTester.setDefaultConfig({
+	parserOptions: {
+		ecmaVersion: 6,
+		ecmaFeatures: {
+			jsx: true,
+		},
+	},
+});
 
 const ruleTester = new RuleTester();
 ruleTester.run('jsx-require-prop-accessibility-label', rule, {
-
-	valid: [
-		{ code: '<Button accessibilityLabel="label" />;' },
-		{ code: '<Button accessibilityLabel={label} />;' },
-	],
+	valid: [{
+		code: '<Button accessibilityLabel="string label" />',
+		options: [['Button']],
+	}, {
+		code: '<Button accessibilityLabel={variableLabel} />',
+		options: [['Button']],
+	}, {
+		code: '<NotButton />',
+		options: [['Button']],
+	}],
 
 	invalid: [{
 		code: '<Button />',
 		errors: [{
 			message: 'Button requires an accessibilityLabel.',
 			type: 'JSXOpeningElement'
-		}]
-	}]
+		}],
+		options: [['Button']],
+	}, {
+		code: '<Button wrongProp="test" />',
+		errors: [{
+			message: 'Button requires an accessibilityLabel.',
+			type: 'JSXOpeningElement'
+		}],
+		options: [['Button']],
+	}],
 });
