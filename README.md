@@ -43,4 +43,4 @@ Then configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
-* `jsx-require-prop-accessibility-label` - Ensures that specified components have the accessibilityLabel prop
+* Ensure that specified components have the accessibilityLabel prop ([jsx-require-prop-accessibility-label](./docs/rules/jsx-require-prop-accessibility-label))
