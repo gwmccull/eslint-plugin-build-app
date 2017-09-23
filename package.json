@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-build-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Eslint plugin for the Build.com React Native app",
   "main": "lib/index.js",
   "directories": {
