@@ -9,12 +9,12 @@
     "test": "tests"
   },
   "dependencies": {
+    "babel-eslint": "^8.0.0",
     "babel-preset-env": "^1.6.0",
     "jsx-ast-utils": "^2.0.1",
     "requireindex": "^1.1.0"
   },
   "devDependencies": {
-    "babel-eslint": "^8.0.0",
     "babel-jest": "^21.0.2",
     "jest": "^21.1.0",
     "jest-cli": "^21.1.0"
