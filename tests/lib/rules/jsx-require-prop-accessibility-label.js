@@ -16,6 +16,10 @@ RuleTester.setDefaultConfig({
 	},
 });
 
+const defaultProps = {
+	accessibilityLabel: 'test',
+};
+
 const ruleTester = new RuleTester();
 ruleTester.run('jsx-require-prop-accessibility-label', rule, {
 	valid: [{
@@ -23,6 +27,9 @@ ruleTester.run('jsx-require-prop-accessibility-label', rule, {
 		options: [['Button']],
 	}, {
 		code: '<Button accessibilityLabel={variableLabel} />',
+		options: [['Button']],
+	}, {
+		code: '<Button {...defaultProps} />',
 		options: [['Button']],
 	}, {
 		code: '<NotButton />',
